@@ -44,9 +44,16 @@ Route::group(['prefix' => 'admin','middleware'=>['web','isAdmin']],function(){
     Route::get('/driverAdd',[AdminController::class,'driverAdd'])->name('driver.add');
     Route::get('/driverlist',[AdminController::class,'driverlist'])->name('driver.list');
 
-    Route::get('/fuel-management',[AdminController::class,'fuelmanage'])->name('admin.fuelmanage');
-    Route::get('/add-fuel',[AdminController::class,'fueladd'])->name('admin.fueladd');
+    Route::get('/fuel-management',[AdminController::class,'fuelmanage'])->name('fuel.manage');
+    Route::get('/add-fuel',[AdminController::class,'fueladd'])->name('fuel.add');
+
+    Route::get('/tracking-history',[AdminController::class,'tracking'])->name('tracking');
+    Route::get('/live-location',[AdminController::class,'location'])->name('location');
+
+    Route::get('/income-and-expenses',[AdminController::class,'income_and_expenses'])->name('income-and-expenses');
+    Route::get('/fuel',[AdminController::class,'fuel'])->name('fuel');
 });
+
 
 // ********** User Routes *********
 Route::group(['middleware'=>['web','isUser']],function(){
