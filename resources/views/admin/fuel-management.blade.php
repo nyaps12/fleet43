@@ -251,17 +251,17 @@
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link collapse" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-truck"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav" class="nav-content show" data-bs-parent="#sidebar-nav">
+                <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="{{ route('vehicle.list') }}">
                             <i class="bi bi-circle"></i><span>Vehicle List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('vehicle.add') }}" class="active">
+                        <a href="{{ route('vehicle.add') }}" >
                             <i class="bi bi-circle"></i><span>Add Vehicle</span>
                         </a>
                     </li>
@@ -270,11 +270,11 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-person-vcard"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('driver.list') }}">
+                        <a href="{{ route('driver.list') }}" >
                             <i class="bi bi-circle"></i><span>Driver's List</span>
                         </a>
                     </li>
@@ -286,21 +286,54 @@
                 </ul>
 
                 <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapse" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-fuel-pump"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav3" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <ul id="components-nav3" class="nav-content show" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('driver.list') }}">
+                        <a href="{{ route('fuel.manage') }}" class="active">
                             <i class="bi bi-circle"></i><span>Fuel Management</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('vehicle.add') }}">
+                        <a href="{{ route('fuel.add') }}">
                             <i class="bi bi-circle"></i><span>Add Fuel</span>
                         </a>
                     </li>
                 </ul>
+
+                <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav4" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-geo"></i><span>Tracking</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav4" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('location') }}">
+                            <i class="bi bi-circle"></i><span>Live Location</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('tracking') }}"   >
+                            <i class="bi bi-circle"></i><span>Tracking History</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav5" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-clipboard-data"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav5" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('income-and-expenses') }}"    >
+                            <i class="bi bi-circle"></i><span> Income & Expenses </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('fuel') }}" >
+                            <i class="bi bi-circle"></i><span>Fuel</span>
+                        </a>
+                    </li>
             </li><!-- End Components Nav -->
 
 
@@ -335,85 +368,30 @@
 
                                 <div class="card">
 
-                                    <div class="card-body pb-0">
+                                <div class="card-body pb-0">
+                                        <h5 class="card-title">Vehicle's Management <span>| Information</span></h5>
 
-                                        <h2 class="card-title">Add Vehicle</h2>
+                                        <table class="table table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">S.No</th>
+                                                    <th scope="col">Fuel Fill Date</th>
+                                                    <th scope="col">Vehicle</th>
+                                                    <th scope="col">Quantity</th>
+                                                    <th scope="col">Fuel Total Price</th>
+                                                    <th scope="col">Fuel Filled</th>
+                                                    <th scope="col">Odometer Reading</th>
+                                                    <th scope="col">Comments</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
 
-                                        <form action="" method="post">
-                                            <div class="row justify-content-center">
-
-
-                                                <div class="col-lg-3">
-
-                                                    <div class="card-body">
-
-                                                        <!-- Vertical Form -->
-
-                                                        <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">Registration Number</label>
-                                                            <input type="text" class="form-control" placeholder="Registration Number" id="inputNanme4">
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="inputEmail4" class="form-label">Chassis No</label>
-                                                            <input type="email" class="form-control" placeholder="Chassis No" id="inputEmail4">
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-lg-3">
-
-                                                    <div class="card-body">
-
-                                                        <!-- Vertical Form -->
-
-                                                        <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">Vehicle</label>
-                                                            <input type="text" class="form-control" placeholder="Vehicle Name" id="inputNanme4">
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="inputEmail4" class="form-label">Engine No</label>
-                                                            <input type="email" class="form-control" placeholder="Engine No" id="inputEmail4">
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-lg-3">
-
-                                                    <div class="card-body">
-
-                                                        <!-- Vertical Form -->
-
-                                                        <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">Model</label>
-                                                            <input type="text" class="form-control" placeholder="Model" id="inputNanme4">
-                                                        </div>
-                                                        <div class="col-12 mb-3">
-                                                            <label for="inputEmail4" class="form-label">Manufactured By</label>
-                                                            <input type="email" class="form-control" placeholder="Manufactured By" id="inputEmail4">
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <label for="text" class="form-label">Registration Expiry Date</label>
-                                                            <input type="text" class="form-control" placeholder="Registration Expiry Date" id="inputPassword4">
-                                                        </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-
-                                        </form>
-                                        <div class="card-footer text-right d-flex">
-                                            <div class="col-auto">
-                                            <a href="$" class="btn btn-outline-primary">Add Vehicle</a>
-                                            </div>
-                                        </div>
+                                            </tbody>
+                                        </table>
 
                                     </div>
+
 
                                 </div>
 
