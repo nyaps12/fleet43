@@ -11,37 +11,45 @@
     <main>
         <div class="container">
 
-            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-6 align-items-center justify-content-center">
+<br>
+<br>
+<br>
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="/" class="logo d-flex align-items-center w-auto">
+                                <img src="assets/img/logo.png" alt="">
+                                <span class="d-none d-lg-block">Fleet Management</span>
+                            </a>
+                        </div><!-- End Logo -->
 
-                            <div class="d-flex justify-content-center py-4">
-                                <a href="/" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">Fleet Management</span>
-                                </a>
-                            </div><!-- End Logo -->
+                        <div class="card mb-3">
 
-                            <div class="card mb-3">
+                            <div class="card-body">
 
-                                <div class="card-body">
 
-                                    <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Driver Login</h5>
+                                <div class="pt-4 pb-2">
+                                <div class="container">
+                                    <a href="/">
+                                    <i class="bi bi-arrow-left"></i>
+                                        Go back</a>
                                     </div>
-                                    <form action="{{ route('login') }}" method="POST">
-                                        @csrf
+                                    <h5 class="card-title text-center pb-0 fs-4">Driver Login</h5>
+                                </div>
+                                <form action="{{ route('login') }}" method="POST">
+                                    @csrf
 
-                                        @if($errors->any())
-                                        @foreach($errors->all() as $error)
-                                        <p style="color:red;">{{ $error }}</p>
-                                        @endforeach
-                                        @endif
+                                    <!-- @if($errors->any())
+                                    @foreach($errors->all() as $error)
+                                    <p style="color:red;">{{ $error }}</p>
+                                    @endforeach
+                                    @endif
 
-                                        @if(Session::has('error'))
-                                        <p style="color:red;">{{ Session::get('error') }}</p>
-                                        @endif
+                                    @if(Session::has('error'))
+                                    <p style="color:red;">{{ Session::get('error') }}</p>
+                                    @endif -->
+                                    <div class="row justify-content-between d-flex">
+
 
                                         <div class="col-12">
                                             <label for="yourLogin" class="form-label">Email or Username</label>
@@ -67,14 +75,22 @@
                                         <div class="col-12">
                                             <button class="btn btn-primary w-100" type="submit">Login</button>
                                         </div>
-                                    </form>
 
-
+                                    </div>
+                                </form>
+                                <div class="text-center">
+                                    <br>
+                                    <span class="text-muted">or</span>
+                                    <div class="text-center pt-3">
+                                        <img src="{{ url('assets/img/google.png') }}" class="img-fluid" width="25px" height="25px" alt="Google Logo">
+                                        <a href="{{ url('auth/google') }}">Login using Google</a>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
+
                 </div>
 
             </section>
@@ -83,8 +99,9 @@
     </main><!-- End #main -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
     @include('layout.footer')
+    @include('layout.javascript')
+
 </body>
 
 </html>
