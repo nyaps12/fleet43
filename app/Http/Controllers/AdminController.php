@@ -12,9 +12,34 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function Vehicle()
+    public function VehicleList()
     {
-        return view('admin.vehicle');
+        return view('admin.vehiclelist');
+    }
+
+    public function VehicleAdd()
+    {
+        return view('admin.addvehicle');
+    }
+
+    public function Driverlist()
+    {
+        return view('admin.driverlist');
+    }
+
+    public function DriverAdd()
+    {
+        return view('admin.driveradd');
+    }
+
+    public function fuelmanagement()
+    {
+        return view('admin.fuelmanage');
+    }
+
+    public function fueladd()
+    {
+        return view('admin.fueladd');
     }
 
 

@@ -252,35 +252,57 @@
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Vehicle</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="Vehicle">
+            <a href="{{ route('vehicle.list') }}">
               <i class="bi bi-circle"></i><span>Vehicle List</span>
             </a>
           </li>
           <li>
-            <a href="components-alerts.html">
+            <a href="{{route('vehicle.add')}}">
               <i class="bi bi-circle"></i><span>Add Vehicle</span>
             </a>
           </li>
         </ul>
       </li><!-- End Components Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+      <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li><!-- End Dashboard Nav -->
+                <ul id="components-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('driver.list') }}">
+                            <i class="bi bi-circle"></i><span>Driver's List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('driver.add') }}" >
+                            <i class="bi bi-circle"></i><span>Add Driver</span>
+                        </a>
+                    </li>
+                </ul>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="index.html">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
+                <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li><!-- End Dashboard Nav -->
+                <ul id="components-nav3" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('driver.list') }}">
+                            <i class="bi bi-circle"></i><span>Fuel Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('driver.add') }}" >
+                            <i class="bi bi-circle"></i><span>Add Fuel</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
 
         </ul>
 
