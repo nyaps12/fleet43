@@ -38,7 +38,11 @@ Route::group(['prefix' => 'super-admin','middleware'=>['web','isSuperAdmin']],fu
 Route::group(['prefix' => 'admin','middleware'=>['web','isAdmin']],function(){
     Route::get('/dashboard',[AdminController::class,'dashboard']);
 
-    Route::get('/vehicle',[AdminController::class,'vehicle'])->name('vehicle.list');
+    Route::get('/vehicleList',[AdminController::class,'vehiclelist'])->name('vehicle.list');
+    Route::get('/vehicleaAdd',[AdminController::class,'vehicleAdd'])->name('vehicle.add');
+
+    Route::get('/driverAdd',[AdminController::class,'driverAdd'])->name('driver.add');
+    Route::get('/driverlist',[AdminController::class,'driverlist'])->name('driver.list');
 });
 
 // ********** User Routes *********
