@@ -251,17 +251,17 @@
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapse" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-menu-button-wide"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <ul id="components-nav" class="nav-content show" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="{{ route('vehicle.list') }}">
                             <i class="bi bi-circle"></i><span>Vehicle List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('vehicle.add') }}">
+                        <a href="{{ route('vehicle.add') }}" class="active">
                             <i class="bi bi-circle"></i><span>Add Vehicle</span>
                         </a>
                     </li>
@@ -269,18 +269,35 @@
             </li><!-- End Components Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapse" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-menu-button-wide"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav2" class="nav-content show" data-bs-parent="#sidebar-nav">
+                <ul id="components-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="{{ route('driver.list') }}">
                             <i class="bi bi-circle"></i><span>Driver's List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('driver.add') }}" class="active">
+                        <a href="{{ route('vehicle.add') }}">
                             <i class="bi bi-circle"></i><span>Add Driver</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-menu-button-wide"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav3" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('driver.list') }}">
+                            <i class="bi bi-circle"></i><span>Fuel Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('vehicle.add') }}">
+                            <i class="bi bi-circle"></i><span>Add Fuel</span>
                         </a>
                     </li>
                 </ul>
@@ -299,7 +316,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Add Driver</li>
+                    <li class="breadcrumb-item active">Add Vehicle</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -320,7 +337,7 @@
 
                                     <div class="card-body pb-0">
 
-                                        <h2 class="card-title">Add Driver</h2>
+                                        <h2 class="card-title">Add Vehicle</h2>
 
                                         <form action="" method="post">
                                             <div class="row justify-content-center">
@@ -333,12 +350,12 @@
                                                         <!-- Vertical Form -->
 
                                                         <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">S no.</label>
-                                                            <input type="text" class="form-control" placeholder="S no." id="inputNanme4">
+                                                            <label for="inputNanme4" class="form-label">Registration Number</label>
+                                                            <input type="text" class="form-control" placeholder="Registration Number" id="inputNanme4">
                                                         </div>
                                                         <div class="col-12">
-                                                            <label for="inputEmail4" class="form-label">Name</label>
-                                                            <input type="email" class="form-control" placeholder="Name" id="inputEmail4">
+                                                            <label for="inputEmail4" class="form-label">Chassis No</label>
+                                                            <input type="email" class="form-control" placeholder="Chassis No" id="inputEmail4">
                                                         </div>
 
                                                     </div>
@@ -352,12 +369,12 @@
                                                         <!-- Vertical Form -->
 
                                                         <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">Mobile</label>
-                                                            <input type="text" class="form-control" placeholder="Mobile" id="inputNanme4">
+                                                            <label for="inputNanme4" class="form-label">Vehicle</label>
+                                                            <input type="text" class="form-control" placeholder="Vehicle Name" id="inputNanme4">
                                                         </div>
                                                         <div class="col-12">
-                                                            <label for="inputEmail4" class="form-label">License No</label>
-                                                            <input type="text" class="form-control" placeholder="License No" id="inputEmail4">
+                                                            <label for="inputEmail4" class="form-label">Engine No</label>
+                                                            <input type="email" class="form-control" placeholder="Engine No" id="inputEmail4">
                                                         </div>
 
                                                     </div>
@@ -371,16 +388,16 @@
                                                         <!-- Vertical Form -->
 
                                                         <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">License Exp Date</label>
-                                                            <input type="text" class="form-control" placeholder="License Exp Date" id="inputNanme4">
+                                                            <label for="inputNanme4" class="form-label">Model</label>
+                                                            <input type="text" class="form-control" placeholder="Model" id="inputNanme4">
                                                         </div>
                                                         <div class="col-12 mb-3">
-                                                            <label for="inputEmail4" class="form-label">Date of Joining</label>
-                                                            <input type="email" class="form-control" placeholder="Date of Joining" id="inputEmail4">
+                                                            <label for="inputEmail4" class="form-label">Manufactured By</label>
+                                                            <input type="email" class="form-control" placeholder="Manufactured By" id="inputEmail4">
                                                         </div>
                                                         <div class="col-12">
-                                                            <label for="text" class="form-label">Status</label>
-                                                            <input type="text" class="form-control" placeholder="Status" id="inputPassword4">
+                                                            <label for="text" class="form-label">Registration Expiry Date</label>
+                                                            <input type="text" class="form-control" placeholder="Registration Expiry Date" id="inputPassword4">
                                                         </div>
 
                                                     </div>
