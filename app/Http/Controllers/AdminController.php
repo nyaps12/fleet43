@@ -32,6 +32,15 @@ class AdminController extends Controller
         return view('admin.driveradd');
     }
 
+    public function fuelmanagement()
+    {
+        return view('admin.fuelmanage');
+    }
+
+    public function fueladd()
+    {
+        return view('admin.fueladd');
+    }
 
 
 }
