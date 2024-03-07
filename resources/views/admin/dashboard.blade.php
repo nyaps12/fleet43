@@ -16,7 +16,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+                <span class="d-none d-lg-block">Fleet Management</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -252,7 +252,7 @@
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-truck"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
             <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
@@ -270,7 +270,7 @@
 
       <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-person-vcard"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav2" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
@@ -287,17 +287,51 @@
 
                 <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-fuel-pump"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav3" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('driver.list') }}">
+                        <a href="{{ route('fuel.manage') }}">
                             <i class="bi bi-circle"></i><span>Fuel Management</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('driver.add') }}" >
+                        <a href="{{ route('fuel.add') }}" >
                             <i class="bi bi-circle"></i><span>Add Fuel</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav4" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-geo"></i><span>Tracking</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav4" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('location') }}">
+                            <i class="bi bi-circle"></i><span>Live Location</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('tracking') }}" >
+                            <i class="bi bi-circle"></i><span>Tracking History</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav5" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-clipboard-data"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav5" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('income-and-expenses') }}">
+                            <i class="bi bi-circle"></i><span> Income & Expenses </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('fuel') }}" >
+                            <i class="bi bi-circle"></i><span>Fuel</span>
                         </a>
                     </li>
                 </ul>
@@ -345,11 +379,11 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Sales <span>| Today</span></h5>
+                                    <h5 class="card-title">Total Vehicle's </h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-cart"></i>
+                                            <i class="bi bi-truck"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6>145</h6>
@@ -380,11 +414,11 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Revenue <span>| This Month</span></h5>
+                                    <h5 class="card-title">Total Driver's</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-currency-dollar"></i>
+                                            <i class="bi bi-person-vcard"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6>$3,264</h6>
@@ -453,11 +487,11 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Customers <span>| This Year</span></h5>
+                                    <h5 class="card-title">Today Trip's</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                            <i class="bi bi-people"></i>
+                                            <i class="bi bi-calendar-day"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6>1244</h6>

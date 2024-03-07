@@ -251,34 +251,35 @@
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link collapse" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-truck"      ></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-truck"></i><span>Vehicle's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav" class="nav-content show" data-bs-parent="#sidebar-nav">
+                <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('vehicle.list') }}" class="active">
+                        <a href="{{ route('vehicle.list') }}">
                             <i class="bi bi-circle"></i><span>Vehicle List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('vehicle.add')}}">
+                        <a href="{{ route('vehicle.add') }}" >
                             <i class="bi bi-circle"></i><span>Add Vehicle</span>
                         </a>
                     </li>
                 </ul>
+            </li><!-- End Components Nav -->
 
-                <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-person-vcard"></i><span>Driver's</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('driver.list') }}">
+                        <a href="{{ route('driver.list') }}" >
                             <i class="bi bi-circle"></i><span>Driver's List</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('driver.add') }}">
+                        <a href="{{ route('vehicle.add') }}">
                             <i class="bi bi-circle"></i><span>Add Driver</span>
                         </a>
                     </li>
@@ -290,12 +291,12 @@
                 </a>
                 <ul id="components-nav3" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('fuel.manage') }}" >
+                        <a href="{{ route('fuel.manage') }}">
                             <i class="bi bi-circle"></i><span>Fuel Management</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('fuel.add') }}"   >
+                        <a href="{{ route('fuel.add') }}">
                             <i class="bi bi-circle"></i><span>Add Fuel</span>
                         </a>
                     </li>
@@ -319,12 +320,12 @@
                 </ul>
 
                 <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav5" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapse" data-bs-target="#components-nav5" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-clipboard-data"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="components-nav5" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <ul id="components-nav5" class="nav-content show " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('income-and-expenses') }}"    >
+                        <a href="{{ route('income-and-expenses') }}" class="active">
                             <i class="bi bi-circle"></i><span> Income & Expenses </span>
                         </a>
                     </li>
@@ -333,6 +334,7 @@
                             <i class="bi bi-circle"></i><span>Fuel</span>
                         </a>
                     </li>
+                </ul>
             </li><!-- End Components Nav -->
 
 
@@ -348,7 +350,7 @@
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Vehicle's Management</li>
+                    <li class="breadcrumb-item active">Add Vehicle</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -365,31 +367,34 @@
                             <div class="container-fluid">
 
 
-                            <div class="card top-selling">
+                                <div class="card">
 
                                 <div class="card-body pb-0">
-                                    <h5 class="card-title">Vehicle's Management <span>| Information</span></h5>
+                                        <h5 class="card-title">Vehicle's Management <span>| Information</span></h5>
 
-                                    <table class="table table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">S.No</th>
-                                                <th scope="col">Vehicle Name</th>
-                                                <th scope="col">Registration Number</th>
-                                                <th scope="col">Model</th>
-                                                <th scope="col">Chassis No</th>
-                                                <th scope="col">Status</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                        <table class="table table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">S.No</th>
+                                                    <th scope="col">Fuel Fill Date</th>
+                                                    <th scope="col">Vehicle</th>
+                                                    <th scope="col">Quantity</th>
+                                                    <th scope="col">Fuel Total Price</th>
+                                                    <th scope="col">Fuel Filled</th>
+                                                    <th scope="col">Odometer Reading</th>
+                                                    <th scope="col">Comments</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
 
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
 
                                 </div>
-
-                            </div>
 
                             </div>
                         </div><!-- End Top Selling -->
