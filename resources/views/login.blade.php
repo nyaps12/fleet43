@@ -14,13 +14,13 @@
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-md-6 flex-column align-items-center justify-content-center">
-                        <div class="d-flex justify-content-center py-4">
-                            <a href="/" class="logo d-flex align-items-center w-auto">
-                                <img src="assets/img/logo.png" alt="">
-                                <span class="d-none d-lg-block">Fleet Management</span>
-                            </a>
-                        </div><!-- End Logo -->
 
+                            <div class="d-flex justify-content-center py-4">
+                                <a href="/" class="logo d-flex align-items-center w-auto">
+                                    <img src="assets/img/image.png" alt="">
+                                    <span class="d-none d-lg-block">Fleet Management</span>
+                                </a>
+                            </div><!-- End Logo -->
                         <div class="card mb-3">
 
                             <div class="card-body">
