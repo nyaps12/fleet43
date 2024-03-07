@@ -39,16 +39,26 @@ class AuthController extends Controller
                 // If the user is already registered, log them in
                 Auth::login($findUser);
             } else {
-                // If the user is not registered, create a new user
-                $newUser = User::create([
-                    'firstname' => $user->user['given_name'], // Use 'given_name' for first name
-                    'lastname' => $user->user['family_name'], // Use 'family_name' for last name
-                    'email' => $user->email,
-                    'google_id' => $user->id,
-                    'password' => bcrypt('12345dummy')
-                ]);
+                // Check if the user with the same email already exists
+                $existingUser = User::where('email', $user->email)->first();
 
-                Auth::login($newUser);
+                if ($existingUser) {
+                    // If the user with the same email exists, you can handle it according to your logic.
+                    // For example, you might want to show an error message or redirect to a different page.
+                    // In this example, we'll log in the existing user.
+                    Auth::login($existingUser);
+                } else {
+                    // If the user is not registered, create a new user
+                    $newUser = User::create([
+                        'firstname' => $user->user['given_name'], // Use 'given_name' for first name
+                        'lastname' => $user->user['family_name'], // Use 'family_name' for last name
+                        'email' => $user->email,
+                        'google_id' => $user->id,
+                        'password' => bcrypt('12345dummy')
+                    ]);
+
+                    Auth::login($newUser);
+                }
             }
 
             return redirect()->intended('/dashboard');
@@ -56,9 +66,6 @@ class AuthController extends Controller
             dd($e->getMessage());
         }
     }
-
-
-
 
 
 
@@ -77,28 +84,22 @@ class AuthController extends Controller
     public function backEnd(Request $request)
     {
         $request->validate([
-            'email' => 'string|required|email',
+            'login' => 'string|required', // Assuming 'login' is the input field for both email and username
             'password' => 'string|required'
         ]);
 
-        $userCredential = $request->only('email', 'password');
+        $loginField = filter_var($request->input('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-        // Attempt to authenticate the user
+        $userCredential = [
+            $loginField => $request->input('login'),
+            'password' => $request->input('password')
+        ];
+
         if (Auth::attempt($userCredential)) {
-            // Check if the authenticated user has a role other than admin or superadmin
-            $user = Auth::user();
-            if ($user->role == 1 || $user->role == 2) {
-                // If the user is admin or superadmin, redirect them to the appropriate dashboard
-                $route = $this->redirectDash();
-                return redirect($route);
-            } else {
-                // If the user is neither admin nor superadmin, log them out and redirect to regular login
-                Auth::logout();
-                return redirect('admin.login')->with('error', 'Regular users cannot login here.');
-            }
+            $route = $this->redirectDash();
+            return redirect($route);
         } else {
-            // If authentication fails, redirect back with an error message
-            return back()->with('error', 'Username & Password is incorrect');
+            return back()->with('error', 'Username or Password is incorrect');
         }
     }
 

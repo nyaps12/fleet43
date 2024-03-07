@@ -17,8 +17,8 @@
 
                             <div class="d-flex justify-content-center py-4">
                                 <a href="/" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/image.png" alt="" height="150" width="50">
-                                    <span class="d-none d-lg-block">Fleet Management</span>
+                                    <img src="assets/img/bbox.png" alt="" height="200" width="50">
+                                    <span class="d-none d-lg-block">Bbox Express</span>
                                 </a>
                             </div><!-- End Logo -->
                         <div class="card mb-3">
@@ -36,7 +36,7 @@
                                 <form action="{{ route('login') }}" method="POST">
                                     @csrf
 
-                                    <!-- @if($errors->any())
+                                    @if($errors->any())
                                     @foreach($errors->all() as $error)
                                     <p style="color:red;">{{ $error }}</p>
                                     @endforeach
@@ -44,7 +44,7 @@
 
                                     @if(Session::has('error'))
                                     <p style="color:red;">{{ Session::get('error') }}</p>
-                                    @endif -->
+                                    @endif
                                     <div class="row justify-content-between d-flex">
 
 

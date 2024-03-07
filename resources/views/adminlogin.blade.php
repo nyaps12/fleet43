@@ -17,12 +17,12 @@
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-6 col-md-6 flex-column align-items-center justify-content-center">
+                        <div class="col-lg-3 col-md-6 flex-column align-items-center justify-content-center">
 
                             <div class="d-flex justify-content-center py-4">
                                 <a href="/" class="logo d-flex align-items-center w-auto">
-                                    <img src="../assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">Fleet Management</span>
+                                    <img src="../assets/img/bbox.png" alt="" width="50" height="1000">
+                                    <span class="d-none d-lg-block">Bbox Express</span>
                                 </a>
                             </div><!-- End Logo -->
 
@@ -33,8 +33,8 @@
                                     <div class="pt-4 pb-2">
                                         <h5 class="card-title text-center pb-0 fs-4">Admin Login</h5>
                                     </div>
-                                    <form action="{{ route('login') }}" method="POST">
-                                        <!-- @csrf
+                                    <form action="{{ route('admin.login') }}" method="POST">
+                                        @csrf
                                         @if($errors->any())
                                         @foreach($errors->all() as $error)
                                         <p style="color:red;">{{ $error }}</p>
@@ -43,12 +43,16 @@
 
                                         @if(Session::has('error'))
                                         <p style="color:red;">{{ Session::get('error') }}</p>
-                                        @endif -->
+                                        @endif
+                                        <div class="row justify-content-center d-flix align-items">
+
+
+
                                         <div class="col-12">
-                                            <label for="yourUsername" class="form-label">Username</label>
+                                            <label for="yourLogin" class="form-label">Email or Username</label>
                                             <div class="input-group has-validation">
-                                                <input type="text" name="username" class="form-control" id="yourUsername" required>
-                                                <div class="invalid-feedback">Please enter your username.</div>
+                                                <input type="text" name="login" class="form-control" id="yourLogin" required>
+                                                <div class="invalid-feedback">Please enter your email or username.</div>
                                             </div>
                                         </div>
 
@@ -64,9 +68,12 @@
                                                 <label class="form-check-label" for="rememberMe">Remember me</label>
                                             </div>
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-6 text-center">
                                             <button class="btn btn-primary w-100" type="submit">Login</button>
                                         </div>
+                                        </div>
+
+
                                     </form>
 
                                 </div>
