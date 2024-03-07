@@ -13,13 +13,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div><!-- End Logo -->
+    @include('layout.logo')
 
         <div class="search-bar">
             <form class="search-form d-flex align-items-center" method="POST" action="#">
@@ -182,13 +176,13 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{$user->name}}</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+                        <h6>{{$user->name}}</h6>
+                            <span>Admin</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -370,23 +364,37 @@
                                     <div class="card-body pb-0">
                                         <h5 class="card-title">Vehicle's Management <span>| Information</span></h5>
 
-                                        <table class="table table-borderless">
+                                        <div class="table-responsive">
+
+
+                                        <table class="table datatable">
                                             <thead>
                                                 <tr>
-                                                    <th scope="col">S.No</th>
                                                     <th scope="col">Name</th>
                                                     <th scope="col">Mobile</th>
+                                                    <th scope="col">License Type</th>
                                                     <th scope="col">License No:</th>
-                                                    <th scope="col">License Exp Date</th>
-                                                    <th scope="col">Date of Joining</th>
                                                     <th scope="col">Status</th>
+                                                    <th scope="col">Date of Joining</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                                @foreach ($driver as $data)
+                                                    <tr>
+                                                        <td>{{$data->firstname}} {{$data->lastname}}</td>
+                                                        <td>{{$data->mobile}}</td>
+                                                        <td>{{$data->license_type}}</td>
+                                                        <td>{{$data->license_no}}</td>
+                                                        <td>{{$data->status}}</td>
+                                                        <td>{{$data->created_at}}</td>
+                                                        <td><span><a href="edit">View</a></span></td>
+                                                    </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
+
+                                        </div>
 
                                     </div>
 

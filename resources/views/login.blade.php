@@ -11,11 +11,9 @@
     <main>
         <div class="container">
 
+            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-6 align-items-center justify-content-center">
-<br>
-<br>
-<br>
+                    <div class="col-lg-6 col-md-6 flex-column align-items-center justify-content-center">
                         <div class="d-flex justify-content-center py-4">
                             <a href="/" class="logo d-flex align-items-center w-auto">
                                 <img src="assets/img/logo.png" alt="">
@@ -30,9 +28,8 @@
 
                                 <div class="pt-4 pb-2">
                                 <div class="container">
-                                    <a href="/">
-                                    <i class="bi bi-arrow-left"></i>
-                                        Go back</a>
+                                    <a href="/" class="btn btn-outline-primary btn-sm">
+                                    <i class="bi bi-arrow-left"></i></a>
                                     </div>
                                     <h5 class="card-title text-center pb-0 fs-4">Driver Login</h5>
                                 </div>
