@@ -500,7 +500,7 @@
                         </div><!-- End Customers Card -->
 
                         <!-- Reports -->
-                        <div class="col-6">
+                        <div class="col-lx-6 col-12">
                             <div class="card">
 
                                 <div class="filter">
@@ -582,7 +582,7 @@
                         </div><!-- End Reports -->
 
                         <!-- Recent Sales -->
-                        <div class="col-6">
+                        <div class="col-lx-6 col-12">
                             <div class="card recent-sales overflow-auto">
 
                                 <div class="filter">
@@ -656,7 +656,7 @@
                         </div><!-- End Recent Sales -->
 
                         <!-- Top Selling -->
-                        <div class="col-4">
+                        <div class="col-lx-6 col-12">
                             <div class="card top-selling overflow-auto">
 
                                 <div class="filter">
@@ -731,7 +731,7 @@
                         </div><!-- End Top Selling -->
 
                         <!-- Top Selling -->
-                        <div class="col-4">
+                        <div class="col-lx-6 col-12">
                             <div class="card top-selling overflow-auto">
 
                                 <div class="filter">
@@ -805,7 +805,7 @@
                         </div><!-- End Top Selling -->
 
                         <!-- Top Selling -->
-                        <div class="col-4">
+                        <div class="col-lx-6 col-12">
                             <div class="card top-selling overflow-auto">
 
                                 <div class="filter">
@@ -895,40 +895,69 @@
                                     </ul>
                                 </div>
 
-                                <div class="card-body pb-0">
-                                    <h5 class="card-title">On Route <span>| Vehicles</span></h5>
+                                    <!-- HTML Structure -->
+                                    <div class="card-body pb-0">
+                                <h5 class="card-title">On Route <span>| Vehicles</span></h5>
+                                <div class="table-responsive">
 
-                                    <table class="table table-borderless">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Location</th>
-                                                <th scope="col">STARTING ROUTE</th>
-                                                <th scope="col">ENDING ROUTE</th>
-                                                <th scope="col">WARNINGS</th>
-                                                <th scope="col">PROGRESS</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
 
-                                            </tr>
-                                            <tr>
-
-                                            </tr>
-                                            <tr>
-
-                                            </tr>
-                                            <tr>
-
-                                            </tr>
-                                            <tr>
-
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
+                                <table id="combinedTable" class="table table-striped datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>Route Name</th>
+                                            <th>Start Point</th>
+                                            <th>End Point</th>
+                                            <th>Waypoints</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="data-table-body">
+                                        <!-- Data will be dynamically added here by JavaScript -->
+                                    </tbody>
+                                </table>
 
                                 </div>
+                            </div>
+
+                            <!-- JavaScript to Fetch and Display Data -->
+                            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                            <script>
+                                // Make a GET request to the API endpoint
+                                $.get('https://route-g44.bbox-express.com/api/route', function (response) {
+                                    // Log the entire data received from the API
+                                    console.log('API Response:', response);
+
+                                    // Check if the API response has a status of 200 and contains route data
+                                    if (response.status === 200 && Array.isArray(response.route) && response.route.length > 0) {
+                                        // Loop through all routes
+                                        $.each(response.route, function (index, route) {
+                                            // Log the specific values of each route
+                                            console.log('Route Name:', route.route_name);
+                                            console.log('Start Point:', route.start_point);
+                                            console.log('End Point:', route.end_point);
+                                            console.log('Waypoints:', route.waypoints);
+
+                                            // Parse waypoints if it's a JSON-encoded string and is defined
+                                            var waypoints = route.waypoints && route.waypoints !== 'undefined' ? JSON.parse(route.waypoints) : 'N/A';
+
+                                            // Log the parsed waypoints
+                                            console.log('Parsed Waypoints:', waypoints);
+
+                                            // Update the table with the received data
+                                            var row = `<tr>
+                                                        <td>${route.route_name}</td>
+                                                        <td>${route.start_point}</td>
+                                                        <td>${route.end_point}</td>
+                                                        <td>${waypoints}</td>
+                                                    </tr>`;
+                                            $('#data-table-body').append(row);
+                                        });
+                                    } else {
+                                        console.error('Invalid or empty route data in the API response.');
+                                    }
+                                }).fail(function () {
+                                    console.error('Failed to fetch data from the API.');
+                                });
+                            </script>
 
                             </div>
                         </div><!-- End Top Selling -->

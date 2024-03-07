@@ -17,7 +17,7 @@
 
                             <div class="d-flex justify-content-center py-4">
                                 <a href="/" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/image.png" alt="">
+                                    <img src="assets/img/image.png" alt="" height="150" width="50">
                                     <span class="d-none d-lg-block">Fleet Management</span>
                                 </a>
                             </div><!-- End Logo -->
