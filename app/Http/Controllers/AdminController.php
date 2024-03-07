@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\lms_g43_drivers;
-use Illuminate\Http\Request;
 use App\Models\lms_g43_vehicles;
+use Illuminate\Http\Request;
+
+
 
 class AdminController extends Controller
 {
     //
     public function dashboard()
     {
+
+
         $vehicle = lms_g43_vehicles::all();
         $user = auth()->user();
         return view('admin.dashboard', compact('vehicle','user'));
