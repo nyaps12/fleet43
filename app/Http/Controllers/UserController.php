@@ -11,4 +11,20 @@ class UserController extends Controller
     {
         return view('user.dashboard');
     }
+
+    public function map()
+    {
+        return view('user.map');
+    }
+
+    public function history()
+    {
+        return view('user.history');
+    }
+
+
+
 }
+
+
+

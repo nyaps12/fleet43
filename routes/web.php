@@ -73,5 +73,10 @@ Route::group(['prefix' => 'admin','middleware'=>['web','isAdmin']],function(){
 Route::group(['middleware'=>['web','isUser']],function(){
     Route::get('/dashboard',[UserController::class,'dashboard']);
 
+    Route::get('/map',[UserController::class,'map'])->name('map');
+
+    Route::get('/history',[UserController::class,'history'])->name('history');
+
+
 
 });

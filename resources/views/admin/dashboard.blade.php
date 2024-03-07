@@ -426,7 +426,7 @@
                         </div><!-- End Revenue Card -->
 
                         <!-- Customers Card -->
-                        <div class="col-xxl-3 col-xl-12">
+                        <div class="col-xxl-3 col-md-6">
 
                             <div class="card info-card customers-card">
 
@@ -463,7 +463,7 @@
                         </div><!-- End Customers Card -->
 
                         <!-- Customers Card -->
-                        <div class="col-xxl-3 col-xl-12">
+                        <div class="col-xxl-3 col-md-6">
 
                             <div class="card info-card customers-card">
 
