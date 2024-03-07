@@ -15,7 +15,7 @@
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
+                <img src="assets/img/image.png" alt="">
                 <span class="d-none d-lg-block">Driver Portal</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -182,13 +182,13 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">{{$user->firstname}}</span>
                     </a><!-- End Profile Iamge Icon -->
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
-                            <span>Web Designer</span>
+                            <h6>{{$user->firstname}}</h6>
+                            <span>Driver</span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -245,12 +245,12 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/">
+                <a class="nav-link" href="/">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-            
+
             </li><!-- End Components Nav -->
 
             <li class="nav-item">
@@ -276,13 +276,13 @@
                         </a>
                     </li>
                 </ul>
-            
-            
 
-                    
+
+
+
             </li><!-- End Dashboard Nav -->
 
-            
+
 
         </ul>
 
@@ -344,7 +344,7 @@
                             </div>
                         </div><!-- End Sales Card -->
 
-                       
+
 
                         <!-- Customers Card -->
                         <div class="col-xxl-3 col-md-6">
@@ -386,7 +386,7 @@
 
 
                         <!-- Recent Sales -->
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="card recent-sales overflow-auto">
 
                                 <div class="filter">
@@ -460,7 +460,7 @@
                         </div><!-- End Recent Sales -->
 
                         <!-- Top Selling -->
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="card top-selling overflow-auto">
 
                                 <div class="filter">
@@ -552,7 +552,7 @@
                                     </ul>
                                 </div>
 
-                               
+
 
                             </div>
                         </div><!-- End Top Selling -->
