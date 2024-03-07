@@ -13,13 +13,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div><!-- End Logo -->
+    @include('layout.logo')
 
         <div class="search-bar">
             <form class="search-form d-flex align-items-center" method="POST" action="#">
@@ -267,7 +261,7 @@
                     </li>
                 </ul>
 
-                
+
             </li><!-- End Components Nav -->
 
             <li class="nav-item">
@@ -287,7 +281,7 @@
                     </li>
                 </ul>
 
-                <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-fuel-pump"></i><span>Fuel</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
@@ -304,7 +298,7 @@
                     </li>
                 </ul>
 
-                <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav4" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-geo"></i><span>Tracking</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
@@ -315,24 +309,24 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('tracking') }}"   >
+                        <a href="{{ route('tracking') }}">
                             <i class="bi bi-circle"></i><span>Tracking History</span>
                         </a>
                     </li>
                 </ul>
 
-                <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav5" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-clipboard-data"></i><span>Reports</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav5" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('income-and-expenses') }}"    >
+                        <a href="{{ route('income-and-expenses') }}">
                             <i class="bi bi-circle"></i><span> Income & Expenses </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('fuel') }}" >
+                        <a href="{{ route('fuel') }}">
                             <i class="bi bi-circle"></i><span>Fuel</span>
                         </a>
                     </li>
@@ -374,79 +368,83 @@
 
                                         <h2 class="card-title">Add Driver</h2>
 
-                                        <form action="" method="post">
+                                        @if($errors->any())
+                                                    @foreach($errors->all() as $error)
+                                                    <p style="color:red;">{{ $error }}</p>
+                                                    @endforeach
+                                                    @endif
+
+                                                    @if(Session::has('error'))
+                                                    <p style="color:red;">{{ Session::get('error') }}</p>
+                                                    @endif
+                                        <form action="{{ route('addDriver') }}" method="post">
+                                            @csrf
                                             <div class="row justify-content-center">
-
-
+                                                <!-- Your other form inputs go here -->
                                                 <div class="col-lg-3">
-
                                                     <div class="card-body">
-
                                                         <!-- Vertical Form -->
-
-                                                        <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">S no.</label>
-                                                            <input type="text" class="form-control" placeholder="S no." id="inputNanme4">
+                                                        <div class="col-12">
+                                                            <label for="firstname" class="form-label">Firstname</label>
+                                                            <input type="text" class="form-control" placeholder="Firstname" name="firstname" id="firstname">
                                                         </div>
                                                         <div class="col-12">
-                                                            <label for="inputEmail4" class="form-label">Name</label>
-                                                            <input type="email" class="form-control" placeholder="Name" id="inputEmail4">
+                                                            <label for="lastname" class="form-label">Lastname</label>
+                                                            <input type="text" class="form-control" placeholder="Lastname" name="lastname" id="lastname">
                                                         </div>
-
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="col-lg-3">
-
-                                                    <div class="card-body">
-
-                                                        <!-- Vertical Form -->
-
                                                         <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">Mobile</label>
-                                                            <input type="text" class="form-control" placeholder="Mobile" id="inputNanme4">
+                                                            <div class="col-md-5">
+                                                            <label for="type" class="form-label">Type</label>
+                                                                <select id="license_type" name="license_type" class="form-select">
+                                                                    <option selected>Choose</option>
+                                                                    <option>Car</option>
+                                                                    <option>Van</option>
+                                                                    <option>Truck</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Your other form inputs go here -->
+                                                <div class="col-lg-3">
+                                                    <div class="card-body">
+                                                        <!-- Vertical Form -->
+                                                        <div class="col-12 mb-3">
+                                                            <label for="mobile" class="form-label">Mobile</label>
+                                                            <input type="tel" class="form-control" placeholder="Mobile" name="mobile" id="inputNanme4">
                                                         </div>
                                                         <div class="col-12">
-                                                            <label for="inputEmail4" class="form-label">License No</label>
-                                                            <input type="text" class="form-control" placeholder="License No" id="inputEmail4">
+                                                            <label for="license_no" class="form-label">License No</label>
+                                                            <input type="text" class="form-control" placeholder="License No" name="license_no" id="inputEmail4">
                                                         </div>
-
                                                     </div>
-
                                                 </div>
-
+                                                <!-- Your other form inputs go here -->
                                                 <div class="col-lg-3">
-
                                                     <div class="card-body">
-
                                                         <!-- Vertical Form -->
-
                                                         <div class="col-12 mb-3">
-                                                            <label for="inputNanme4" class="form-label">License Exp Date</label>
-                                                            <input type="text" class="form-control" placeholder="License Exp Date" id="inputNanme4">
-                                                        </div>
-                                                        <div class="col-12 mb-3">
-                                                            <label for="inputEmail4" class="form-label">Date of Joining</label>
-                                                            <input type="email" class="form-control" placeholder="Date of Joining" id="inputEmail4">
+                                                            <label for="date_of_joining" class="form-label">Date of Joining</label>
+                                                            <input type="date" class="form-control" placeholder="Date of Joining" name="date_of_joining" id="inputEmail4">
                                                         </div>
                                                         <div class="col-12">
-                                                            <label for="text" class="form-label">Status</label>
-                                                            <input type="text" class="form-control" placeholder="Status" id="inputPassword4">
+                                                            <label for="status" class="form-label">Status</label>
+                                                            <select class="form-select" id="status" name="status" required>
+                                                                <option value="Active">Active</option>
+                                                                <option value="Inactive">Inactive</option>
+                                                            </select>
                                                         </div>
-
                                                     </div>
-
                                                 </div>
-
                                             </div>
-
+                                            <div class="card-footer text-end">
+                                                <div class="col-auto">
+                                                    <button type="submit" class="btn btn-outline-primary">Add Driver</button>
+                                                </div>
+                                            </div>
                                         </form>
-                                        <div class="card-footer text-right d-flex">
-                                            <div class="col-auto">
-                                            <a href="$" class="btn btn-outline-primary">Add Vehicle</a>
-                                            </div>
-                                        </div>
+
+
 
                                     </div>
 

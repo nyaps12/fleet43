@@ -9,5 +9,6 @@ class lms_g43_drivers extends Model
 {
     protected $table = 'lms_g43_drivers';
 
-    protected $fillable = ['firstName', 'lastName', 'mobile', 'license_type', 'license_no', 'status'];
+    protected $fillable = ['firstname', 'lastname', 'mobile', 'license_type', 'license_no', 'status'];
+
 }

@@ -17,11 +17,11 @@
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="col-lg-6 col-md-6 flex-column align-items-center justify-content-center">
 
                             <div class="d-flex justify-content-center py-4">
                                 <a href="/" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/logo.png" alt="">
+                                    <img src="../assets/img/logo.png" alt="">
                                     <span class="d-none d-lg-block">Fleet Management</span>
                                 </a>
                             </div><!-- End Logo -->
@@ -34,7 +34,7 @@
                                         <h5 class="card-title text-center pb-0 fs-4">Admin Login</h5>
                                     </div>
                                     <form action="{{ route('login') }}" method="POST">
-                                        @csrf
+                                        <!-- @csrf
                                         @if($errors->any())
                                         @foreach($errors->all() as $error)
                                         <p style="color:red;">{{ $error }}</p>
@@ -43,7 +43,7 @@
 
                                         @if(Session::has('error'))
                                         <p style="color:red;">{{ Session::get('error') }}</p>
-                                        @endif
+                                        @endif -->
                                         <div class="col-12">
                                             <label for="yourUsername" class="form-label">Username</label>
                                             <div class="input-group has-validation">
@@ -83,7 +83,8 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    @include('footer')
+    @include('layout.footer')
+    @include('layout.javascript')
 
 </body>
 
